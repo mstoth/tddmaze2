@@ -12,7 +12,7 @@ class Maze:
     moveTo(self.t,30,190)
     self.t.setHeading(90)
 
-  def colorInFront():
+  def colorInFront(self):
     return white
 
 
@@ -34,6 +34,8 @@ if 1:
     # test for turtle position
     assert m.t.getXPos()==30
     assert m.t.getYPos()==190
+    # test for color in front
+    assert m.colorInFront()==white
     
 
 
