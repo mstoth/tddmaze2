@@ -13,7 +13,20 @@ class Maze:
     self.t.setHeading(90)
 
   def colorInFront(self):
-    return white
+    if getHeading(self.t) == 90:
+      px = getPixelAt(self.image,self.t.getXPos()+20,self.t.getYPos())
+    if getHeading(self.t) == 180: 
+      px = getPixelAt(self.image,self.t.getXPos(),self.t.getYPos()+20)
+    if getHeading(self.t) == 270:
+      px = getPixelAt(self.image,self.t.getXPos()-20,self.t.getYPos())
+    if getHeading(self.t) == 0: 
+      px = getPixelAt(self.image,self.t.getXPos(),self.t.getYPos()-20)
+    c = getColor(px)
+    if distance(c,white)<150:
+      return white
+    if distance(c,blue)<150:
+      return blue
+    return blue
 
 
 
@@ -36,6 +49,14 @@ if 1:
     assert m.t.getYPos()==190
     # test for color in front
     assert m.colorInFront()==white
-    
+    # point down
+    m.t.setHeading(180)
+    assert m.colorInFront()==blue
+    # check the other two directions
+    m.t.setHeading(270)
+    assert m.colorInFront()==blue
+    m.t.setHeading(0)
+    assert m.colorInFront()==white
+
 
 
