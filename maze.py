@@ -12,6 +12,10 @@ class Maze:
     moveTo(self.t,30,190)
     self.t.setHeading(90)
 
+  def colorInFront():
+    return white
+
+
 
 # tests
 
