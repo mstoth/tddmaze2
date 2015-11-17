@@ -5,8 +5,12 @@ class Maze:
   """ A class which can solve a maze given by maze.jpg """
   def __init__(self):
     self.image=makePicture('maze.jpg')
-    self.world = makeWorld(getWidth(self.image),getHeight(self.image))
-  
+    self.w = makeWorld(getWidth(self.image),getHeight(self.image))
+    self.w.setPicture(self.image)
+
+
+
+
 # tests
 
 if 1:
@@ -15,4 +19,7 @@ if 1:
     # test for image
     assert m.image.__class__==Picture
     # test for world 
-    assert m.world.__class__==World
+    assert m.w.__class__==World
+    # test for picture
+    p = m.w.getPicture()
+    assert p.getFileName() != 'None'
