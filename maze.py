@@ -7,7 +7,7 @@ class Maze:
     self.image=makePicture('maze.jpg')
     self.w = makeWorld(getWidth(self.image),getHeight(self.image))
     self.w.setPicture(self.image)
-
+    self.t=makeTurtle(self.w)
 
 
 
@@ -23,3 +23,8 @@ if 1:
     # test for picture
     p = m.w.getPicture()
     assert p.getFileName() != 'None'
+    # test for turtle
+    assert m.t.__class__ == Turtle
+
+
+
