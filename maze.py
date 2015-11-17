@@ -8,7 +8,9 @@ class Maze:
     self.w = makeWorld(getWidth(self.image),getHeight(self.image))
     self.w.setPicture(self.image)
     self.t=makeTurtle(self.w)
-
+    penUp(self.t)
+    moveTo(self.t,30,190)
+    self.t.setHeading(90)
 
 
 # tests
@@ -25,6 +27,9 @@ if 1:
     assert p.getFileName() != 'None'
     # test for turtle
     assert m.t.__class__ == Turtle
-
+    # test for turtle position
+    assert m.t.getXPos()==30
+    assert m.t.getYPos()==190
+    
 
 
