@@ -99,6 +99,10 @@ if 1:
     m.travel2BranchOrWall()
     assert getXPos(m.t)==110
     assert getYPos(m.t)==150
-
-
-
+    # trail test
+    moveTo(m.t,30,190)
+    m.t.setHeading(90)
+    m.travel2BranchOrWall()
+    turn(m.t,180)
+    assert m.colorInFront()==green
+    
