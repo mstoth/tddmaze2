@@ -84,6 +84,13 @@ if 1:
     m.travel2BranchOrWall()
     assert getXPos(m.t)==110
     assert getYPos(m.t)==190
+    # test going north
+    moveTo(m.t,30,190)
+    m.t.setHeading(0)
+    m.travel2BranchOrWall()
+    assert getXPos(m.t)==30
+    assert getYPos(m.t)==110
+    
 
 
 
