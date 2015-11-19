@@ -90,7 +90,15 @@ if 1:
     m.travel2BranchOrWall()
     assert getXPos(m.t)==30
     assert getYPos(m.t)==110
-    
+    # more tests
+    m.t.setHeading(90)
+    m.travel2BranchOrWall()
+    assert getXPos(m.t)==110
+    assert getYPos(m.t)==110
+    turn(m.t,90)
+    m.travel2BranchOrWall()
+    assert getXPos(m.t)==110
+    assert getYPos(m.t)==150
 
 
 
